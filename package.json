@@ -4,7 +4,7 @@
   "description": "Local stdio MCP server for TAGO public transit APIs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/WhiPaper/mobikorea-mcp.git"
+    "url": "git+https://github.com/WhiPaper/mobikorea-mcp.git"
   },
   "bugs": {
     "url": "https://github.com/WhiPaper/mobikorea-mcp/issues"
@@ -18,7 +18,7 @@
     "dist"
   ],
   "bin": {
-    "mobikorea-mcp": "./dist/server.js"
+    "mobikorea-mcp": "dist/server.js"
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",

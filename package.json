@@ -1,0 +1,54 @@
+{
+  "name": "mobikorea-mcp",
+  "version": "0.1.0",
+  "description": "Local stdio MCP server for TAGO public transit APIs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WhiPaper/mobikorea-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WhiPaper/mobikorea-mcp/issues"
+  },
+  "homepage": "https://github.com/WhiPaper/mobikorea-mcp#readme",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "mobikorea-mcp": "./dist/server.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "test:unit": "node --test test/*.test.js",
+    "test:e2e": "npm run build && node --test test/e2e/*.test.js",
+    "test:coverage": "npm run build && node --experimental-test-coverage --test-coverage-include='dist/*.js' --test-coverage-lines=90 --test-coverage-branches=60 --test-coverage-functions=85 --test test/*.test.js",
+    "prepublishOnly": "npm run build",
+    "test": "npm run build && npm run test:unit"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "korea",
+    "public-transport",
+    "tago"
+  ],
+  "author": "",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.4.0",
+    "fast-xml-parser": "^5.12.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "^2.4.0",
+    "@types/node": "^26.6.10",
+    "typescript": "^7.0.2"
+  }
+}

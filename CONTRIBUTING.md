@@ -23,3 +23,15 @@ configuration. For larger changes, open an issue first to discuss the approach.
 Label pull requests with `breaking-change`, `enhancement`, `bug`, or
 `documentation` where appropriate. GitHub uses these labels to group generated
 release notes; unlabeled changes appear under “Other changes.”
+
+## Releases
+
+Update the version in `package.json` and `package-lock.json`, add the release
+date and notes to `CHANGELOG.md`, then publish a GitHub Release for the matching
+`vX.Y.Z` tag. The `publish.yml` workflow tests and publishes each published
+GitHub Release to npm using Trusted Publishing.
+
+For the first npm publication, publish the package interactively, then configure
+the package's npm Trusted Publisher as GitHub Actions with owner `WhiPaper`,
+repository `mobikorea-mcp`, and workflow file `publish.yml`. Later releases
+publish from GitHub Actions without an npm token.
